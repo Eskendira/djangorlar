@@ -136,4 +136,4 @@ if __name__ == "__main__":
         print(student.get_student_info())
         print()
     
-    print(f"Class average: {manager.get_class_average():.2f}")
+    print(f"Class average-V1: {manager.get_class_average():.2f}")
