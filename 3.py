@@ -153,7 +153,7 @@ if __name__ == "__main__":
         laptop.update_price(899.99)
     
     # Display information
-    print("All Products:")
+    print("All Products-V1:")
     for product in inventory.get_all_products():
         print(product.get_product_info())
     
