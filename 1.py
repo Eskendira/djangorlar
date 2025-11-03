@@ -79,7 +79,7 @@ class Calculator:
 # Example usage
 if __name__ == "__main__":
     calc = Calculator()
-    print("Calculator initialized")
+    print("Calculator initialized-V3")
     print(f"2 + 3 = {calc.add(2, 3)}")
     print(f"5 * 4 = {calc.multiply(5, 4)}")
     print(f"10 / 2 = {calc.divide(10, 2)}")
