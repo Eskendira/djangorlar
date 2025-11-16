@@ -1,1 +1,2 @@
 -r prod.txt
+Faker>=18.0.0
