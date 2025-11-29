@@ -28,7 +28,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 
-class CustomUser(AbstractBaseUser, PermissionsMixin, AbstractBaseModel):
+class CustomUser(AbstractBaseUser, PermissionsMixin, AbstractSoftDeletableModel):
 
     ROLE_CHOICES = [
         ("admin", "Admin"),

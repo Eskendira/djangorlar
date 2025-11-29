@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 from faker import Faker
 import random
+import datetime
 
 
 class Command(BaseCommand):
@@ -48,10 +49,10 @@ class Command(BaseCommand):
             country = fake.country()
             department = random.choice(departments)
             role = random.choice(roles)
-            birth_year = random.randint(1975, 2005)
-            birth_date = fake.date_of_birth(minimum_age=0, maximum_age=100)
-            # ensure year range
-            birth_date = birth_date.replace(year=random.randint(1975, 2005))
+            birth_date = fake.date_between_dates(
+                date_start=datetime.date(1975, 1, 1),
+                date_end=datetime.date(2005, 12, 31),
+            )
 
             user = User(
                 email=email,
@@ -64,7 +65,7 @@ class Command(BaseCommand):
                 department=department,
                 role=role,
                 birth_date=birth_date,
-                salary=random.randint(300, 10000),
+                salary=random.randint(300, 1000000),
                 is_active=True,
                 is_staff=False,
                 date_joined=timezone.now(),
